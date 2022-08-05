@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Golos Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Golos Regular'),
+    url('./app/assets/fonts/Golos-Text_Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Golos Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Golos Medium'),
+    url('./app/assets/fonts/Golos-Text_Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Golos Semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Golos Semibold'),
+    url('./app/assets/fonts/Golos-Text_DemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Golos Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Golos Bold'),
+    url('./app/assets/fonts/Golos-Text_Bold.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  font-family: 'Golos Semibold';
+} */
+
+.page__wrapper {
+  background: repeating-linear-gradient(
+    to right,
+    #fff,
+    #fff 210px,
+    #eff1f3 210px,
+    #eff1f3 211px
+  );
+}
