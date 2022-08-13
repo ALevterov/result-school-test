@@ -4,9 +4,6 @@ module.exports = {
   theme: {
     fontFamily: {
       golos: ['Golos', 'sans-serif'],
-      'golos-med': ['Golos Medium', 'sans-serif'],
-      'golos-sb': ['Golos Semibold', 'sans-serif'],
-      'golos-b': ['Golos Bold', 'sans-serif'],
     },
     fontSize: {
       xs: '.75rem',
@@ -23,15 +20,17 @@ module.exports = {
     extend: {
       colors: {
         accent: '#ed7138',
-        'basic-black': '#0f1214',
+        black: '#0f1214',
         grey: '#878889',
+        blue: '#7F76FF',
+        purple: '#9088FF',
       },
       lineHeight: {
         27: '2.7rem',
       },
     },
     screens: {
-      '3xl': { max: '1920px' },
+      '3xl': { min: '1537px', max: '10000px' },
       '2xl': { max: '1536px' },
       xl: { max: '1280px' },
       lg: { max: '1024px' },
