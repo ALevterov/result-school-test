@@ -4,7 +4,10 @@ import { forwardRef } from 'react'
 const MParralaxSkillCard = forwardRef((props, ref) => {
   const { text, image } = props
   return (
-    <div ref={ref} className={`flex flex-col items-center`}>
+    <div
+      ref={ref}
+      className={`flex flex-col items-center mt-[30rem] text-[#fff]`}
+    >
       <div className='mb-[3rem]'>
         <img src={image} alt='svg icon' />
       </div>
