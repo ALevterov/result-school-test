@@ -52,7 +52,11 @@ const ParallaxBlock = ({ offset }) => {
   // sex section
   const interval = 100
   const beginCardAnimation = animationOffset + 550
+
   const endOfFirstBlockAnimation = beginCardAnimation + interval * 4
+
+  const SUheight = useTransform(scrollY, inputChangeTitles, [250, 0])
+  const SUminHeight = useTransform(scrollY, inputChangeTitles, ['100%', '0%'])
 
   const firstCardInput = [
     beginCardAnimation + interval,
@@ -93,6 +97,53 @@ const ParallaxBlock = ({ offset }) => {
     marginTop: useTransform(scrollY, thirdCardInput, outputMargin),
   }
 
+  const beginOfSHS = animationOffset + 1400
+  const beginOfSecondBlockAnimation = beginOfSHS + interval * 4
+
+  const fourCardInput = [
+    beginOfSHS + interval,
+    beginOfSHS + interval * 2,
+    beginOfSecondBlockAnimation + interval,
+    beginOfSecondBlockAnimation + interval * 2,
+  ]
+  const fiveCardInput = [
+    beginOfSHS + interval * 2,
+    beginOfSHS + interval * (2 + 1),
+    beginOfSecondBlockAnimation + interval * 2,
+    beginOfSecondBlockAnimation + interval * (2 + 1),
+  ]
+
+  const sixCardInput = [
+    beginOfSHS + interval * 3,
+    beginOfSHS + interval * (3 + 1),
+    beginOfSecondBlockAnimation + interval * 3,
+    beginOfSecondBlockAnimation + interval * (3 + 1),
+  ]
+
+  const fourCard = {
+    opacity: useTransform(scrollY, fourCardInput, outputOpacity),
+    marginTop: useTransform(scrollY, fourCardInput, outputMargin),
+  }
+
+  const fiveCard = {
+    opacity: useTransform(scrollY, fiveCardInput, outputOpacity),
+    marginTop: useTransform(scrollY, fiveCardInput, outputMargin),
+  }
+
+  const sixCard = {
+    opacity: useTransform(scrollY, sixCardInput, outputOpacity),
+    marginTop: useTransform(scrollY, sixCardInput, outputMargin),
+  }
+  const endOfSecondBlockAnimation = beginOfSHS + interval * 4
+
+  const SHSheightInput = [
+    endOfSecondBlockAnimation,
+    endOfSecondBlockAnimation + 50,
+  ]
+
+  const SHSheight = useTransform(scrollY, SHSheightInput, [250, 0])
+  const SHSminHeight = useTransform(scrollY, SHSheightInput, ['100%', '0%'])
+
   // end of sex section
 
   return (
@@ -126,7 +177,12 @@ const ParallaxBlock = ({ offset }) => {
           text='strong hard skills'
         />
       </MParallaxTitleBlock>
-      <MParallaxCardContainer>
+      <MParallaxCardContainer
+        style={{
+          height: SUheight,
+          minHeight: SUminHeight,
+        }}
+      >
         <MparallaxSkillCard
           image={SVG1}
           text='Научишься понимать терминологию, документацию и писать код на уровне востребованных  разработчиков'
@@ -143,17 +199,26 @@ const ParallaxBlock = ({ offset }) => {
           style={thirdCard}
         />
       </MParallaxCardContainer>
-      <MParallaxCardContainer>
+
+      <MParallaxCardContainer
+        style={{
+          height: SHSheight,
+          minHeight: SHSminHeight,
+        }}
+      >
         <MparallaxSkillCard
           image={SVG4}
           text='Создашь с помощью фреймворка React  визуальную часть приложения: элементы, анимация'
+          style={fourCard}
         />
         <MparallaxSkillCard
           image={SVG5}
+          style={fiveCard}
           text='Изучишь NodeJS на достаточном уровне чтобы связывать frontend и backend'
         />
         <MparallaxSkillCard
           image={SVG6}
+          style={sixCard}
           text='Овладеешь базой,  от которого можно отталкиваться и учить любую технологию на JavaScript'
         />
       </MParallaxCardContainer>
