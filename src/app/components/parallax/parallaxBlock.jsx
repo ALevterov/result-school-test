@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useScroll, useTransform } from 'framer-motion'
 import MparallaxSkillTitle from './MparallaxSkillTitle'
 import MparallaxTitle from './MparallaxTitle'
 import MParallaxTitleBlock from './MParallaxTitleBlock'

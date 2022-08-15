@@ -8,6 +8,7 @@ import devChat from '../assets/dev-chat.png'
 import FramedInfoBlock from '../components/framedInfoBlock'
 import ParallaxBlock from '../components/parallax/parallaxBlock'
 import { useEffect, useRef, useState } from 'react'
+import MobileVersion from './mobileVersion'
 const MainPage = () => {
   const parallaxRef = useRef(null)
   const [parRef, setParRef] = useState(false)
@@ -16,7 +17,8 @@ const MainPage = () => {
       setParRef(true)
     }
   }, [parallaxRef])
-  return (
+  const viewport = window.screen.width
+  return viewport >= 1024 ? (
     <div className='page__wrapper font-golos'>
       <div
         className='3xl:pl-[11.5rem] 3xl:pt-[10rem] 2xl:pl-[8rem] 2xl:pt-[7rem] xl:pt-[6.4rem] xl:pl-[5.4rem]
@@ -156,6 +158,8 @@ const MainPage = () => {
         {parRef && <ParallaxBlock offset={parallaxRef.current.offsetTop} />}
       </section>
     </div>
+  ) : (
+    <MobileVersion />
   )
 }
 

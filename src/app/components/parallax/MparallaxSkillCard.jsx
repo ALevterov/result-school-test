@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion'
 import { forwardRef } from 'react'
 
-const MParralaxSkillCard = forwardRef((props, ref) => {
-  const { text, image } = props
+export const ParralaxSkillCard = forwardRef((props, ref) => {
+  const { text, image, css } = props
   return (
     <div
       ref={ref}
-      className={`flex flex-col items-center mt-[30rem] text-[#fff]`}
+      className={
+        css +
+        ` flex flex-col items-center xl:mt-[30rem] text-[#fff] trans:my-[1rem] md:my-[1rem] max-w-[20rem] exsm:max-w-[50%]`
+      }
     >
-      <div className='3xl:mb-[3rem] 2xl:mb-[3rem] xl:mb-[2rem]'>
+      <div className='3xl:mb-[3rem] 2xl:mb-[3rem] xl:mb-[2rem] trans:mb-[1rem] md:mb-[1rem]'>
         <img
           className='xl:max-w-[40px] lg:max-w-[34px]'
           src={image}
@@ -21,5 +24,5 @@ const MParralaxSkillCard = forwardRef((props, ref) => {
     </div>
   )
 })
-
-export default motion(MParralaxSkillCard)
+const MParralaxSkillCard = motion(ParralaxSkillCard)
+export default MParralaxSkillCard
