@@ -10,7 +10,7 @@ import SVG4 from '../../assets/parallax/4.svg'
 import SVG5 from '../../assets/parallax/5.svg'
 import SVG6 from '../../assets/parallax/6.svg'
 import MparallaxSkillCard from './MparallaxSkillCard'
-import MParallaxCardContainer from './MParallaxCardContainer'
+import MParallaxSkillCardContainer from './MParallaxSkillCardContainer'
 
 const ParallaxBlock = ({ offset }) => {
   console.log('offset: ', offset)
@@ -218,7 +218,7 @@ const ParallaxBlock = ({ offset }) => {
           text='strong hard skills'
         />
       </MParallaxTitleBlock>
-      <MParallaxCardContainer
+      <MParallaxSkillCardContainer
         transition={{ type: 'spring' }}
         style={{
           height: SUheight,
@@ -240,9 +240,9 @@ const ParallaxBlock = ({ offset }) => {
           text='Создашь Fullstack приложение, которое покажет что твои навыки выше чем у стандартного junior '
           style={thirdCard}
         />
-      </MParallaxCardContainer>
+      </MParallaxSkillCardContainer>
 
-      <MParallaxCardContainer
+      <MParallaxSkillCardContainer
         style={{
           height: SHSheight,
           minHeight: SHSminHeight,
@@ -263,7 +263,7 @@ const ParallaxBlock = ({ offset }) => {
           style={sixCard}
           text='Овладеешь базой,  от которого можно отталкиваться и учить любую технологию на JavaScript'
         />
-      </MParallaxCardContainer>
+      </MParallaxSkillCardContainer>
     </div>
   )
 }

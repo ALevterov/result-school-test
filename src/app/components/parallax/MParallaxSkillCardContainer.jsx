@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { forwardRef } from 'react'
 
-const MParallaxCardContainer = forwardRef((props, ref) => {
+const MParallaxSkillCardContainer = forwardRef((props, ref) => {
   const { children } = props
   return (
     <div
@@ -13,4 +13,4 @@ const MParallaxCardContainer = forwardRef((props, ref) => {
   )
 })
 
-export default motion(MParallaxCardContainer)
+export default motion(MParallaxSkillCardContainer)
