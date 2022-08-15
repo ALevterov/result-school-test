@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/result-school-test/static/css/main.d3dd71fa.css",
-    "main.js": "/result-school-test/static/js/main.e70d7e27.js",
+    "main.css": "/result-school-test/static/css/main.3833b550.css",
+    "main.js": "/result-school-test/static/js/main.00f04697.js",
     "static/media/mobile-safari.png": "/result-school-test/static/media/mobile-safari.a41d19f47b85f4bad66b.png",
     "static/media/dev-chat.png": "/result-school-test/static/media/dev-chat.45946e6b8812d47e652f.png",
     "static/media/Golos-Text_Medium.ttf": "/result-school-test/static/media/Golos-Text_Medium.3b4d13cddd570d1baa95.ttf",
@@ -16,11 +16,11 @@
     "static/media/2.svg": "/result-school-test/static/media/2.1b68fd800923b8c77b470a7545804848.svg",
     "static/media/5.svg": "/result-school-test/static/media/5.2772e41710db3e7ce31bf7480d633568.svg",
     "index.html": "/result-school-test/index.html",
-    "main.d3dd71fa.css.map": "/result-school-test/static/css/main.d3dd71fa.css.map",
-    "main.e70d7e27.js.map": "/result-school-test/static/js/main.e70d7e27.js.map"
+    "main.3833b550.css.map": "/result-school-test/static/css/main.3833b550.css.map",
+    "main.00f04697.js.map": "/result-school-test/static/js/main.00f04697.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3dd71fa.css",
-    "static/js/main.e70d7e27.js"
+    "static/css/main.3833b550.css",
+    "static/js/main.00f04697.js"
   ]
 }
