@@ -8,7 +8,7 @@ export const ParralaxSkillCard = forwardRef((props, ref) => {
       ref={ref}
       className={
         css +
-        ` flex flex-col items-center xl:mt-[30rem] text-[#fff] trans:my-[1rem] md:my-[1rem] max-w-[20rem] exsm:max-w-[50%]`
+        ` flex flex-col items-center xl:mt-[30rem] text-[#fff] trans:my-[1rem] md:my-[1rem] trans:max-w-[20rem] md:max-w-[20rem] exsm:max-w-[50%]`
       }
     >
       <div className='3xl:mb-[3rem] 2xl:mb-[3rem] xl:mb-[2rem] trans:mb-[1rem] md:mb-[1rem]'>
