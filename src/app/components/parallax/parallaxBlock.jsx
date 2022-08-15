@@ -14,22 +14,57 @@ import MParallaxCardContainer from './MParallaxCardContainer'
 
 const ParallaxBlock = ({ offset }) => {
   console.log('offset: ', offset)
+  // sex section
+
+  const screenWidth = window.screen.width
+
   const { scrollY } = useScroll()
 
   const animationOffset = +offset + 600
+  const inputChangeTitles = [animationOffset + 1350, animationOffset + 1400]
+  const interval = 100
+  const beginCardAnimation = animationOffset + 550
+  const endOfFirstBlockAnimation = beginCardAnimation + interval * 4
+  const beginOfSHS = animationOffset + 1400
+  const beginOfSecondBlockAnimation = beginOfSHS + interval * 4
+  const endOfSecondBlockAnimation = beginOfSecondBlockAnimation + interval * 4
 
   //заголовок появляется
+
   const titleOpacity = useTransform(
     scrollY,
-    [animationOffset, animationOffset + 200],
-    [0, 1]
+    [
+      animationOffset,
+      animationOffset + 200,
+      endOfSecondBlockAnimation + 300,
+      endOfSecondBlockAnimation + 400,
+    ],
+    [0, 1, 1, 0]
   )
 
   // заголовок поднимается вверх
+  let topPos, botPos
+  if (screenWidth > 1280) {
+    topPos = botPos = 100
+  }
+  if (screenWidth <= 1280 && screenWidth > 1024) {
+    topPos = 0
+    botPos = 120
+  }
+  if (screenWidth <= 1024) {
+    topPos = -80
+    botPos = 150
+  }
+  // console.log('topOffset', topOffset)
   const titleTop = useTransform(
     scrollY,
-    [animationOffset + 200, animationOffset + 400],
-    [0, -100]
+    [
+      animationOffset + 300,
+      animationOffset + 400,
+      endOfSecondBlockAnimation + 150,
+      endOfSecondBlockAnimation + 250,
+    ],
+    [topPos, -botPos, -botPos, topPos]
   )
 
   //появляются надписи над секциями
@@ -40,20 +75,15 @@ const ParallaxBlock = ({ offset }) => {
   )
 
   // надписи уезжают влево
-  const inputChangeTitles = [animationOffset + 1350, animationOffset + 1400]
+  // const inputChangeTitles = [animationOffset + 1350, animationOffset + 1400]
 
-  const alignSkillTitle = useTransform(scrollY, inputChangeTitles, [200, 50])
+  const alignSkillTitle = useTransform(scrollY, inputChangeTitles, [300, 100])
 
   // левая надпись меняет цвет
   const opacitySU = useTransform(scrollY, inputChangeTitles, [1, 0.5])
 
   // правая надпись меняет цвет
   const opacitySHS = useTransform(scrollY, inputChangeTitles, [0.5, 1])
-  // sex section
-  const interval = 100
-  const beginCardAnimation = animationOffset + 550
-
-  const endOfFirstBlockAnimation = beginCardAnimation + interval * 4
 
   const SUheight = useTransform(scrollY, inputChangeTitles, [250, 0])
   const SUminHeight = useTransform(scrollY, inputChangeTitles, ['100%', '0%'])
@@ -97,9 +127,6 @@ const ParallaxBlock = ({ offset }) => {
     marginTop: useTransform(scrollY, thirdCardInput, outputMargin),
   }
 
-  const beginOfSHS = animationOffset + 1400
-  const beginOfSecondBlockAnimation = beginOfSHS + interval * 4
-
   const fourCardInput = [
     beginOfSHS + interval,
     beginOfSHS + interval * 2,
@@ -134,7 +161,6 @@ const ParallaxBlock = ({ offset }) => {
     opacity: useTransform(scrollY, sixCardInput, outputOpacity),
     marginTop: useTransform(scrollY, sixCardInput, outputMargin),
   }
-  const endOfSecondBlockAnimation = beginOfSHS + interval * 4
 
   const SHSheightInput = [
     endOfSecondBlockAnimation,
@@ -143,6 +169,16 @@ const ParallaxBlock = ({ offset }) => {
 
   const SHSheight = useTransform(scrollY, SHSheightInput, [250, 0])
   const SHSminHeight = useTransform(scrollY, SHSheightInput, ['100%', '0%'])
+
+  const titleBlockOpacityInput = [
+    endOfSecondBlockAnimation + 50,
+    endOfSecondBlockAnimation + 150,
+  ]
+  const titleBlockOpacity = useTransform(
+    scrollY,
+    titleBlockOpacityInput,
+    [1, 0]
+  )
 
   // end of sex section
 
@@ -153,14 +189,18 @@ const ParallaxBlock = ({ offset }) => {
           opacity: titleOpacity,
           marginTop: titleTop,
         }}
+        transition={{ type: 'spring' }}
         text='Что тебе даст прохождение курса?'
       />
       <MParallaxTitleBlock
+        transition={{ type: 'spring' }}
         style={{
           paddingLeft: alignSkillTitle,
+          opacity: titleBlockOpacity,
         }}
       >
         <MparallaxSkillTitle
+          transition={{ type: 'spring' }}
           op='100'
           text='skills upgrade'
           style={{
@@ -169,6 +209,7 @@ const ParallaxBlock = ({ offset }) => {
           }}
         />
         <MparallaxSkillTitle
+          transition={{ type: 'spring' }}
           style={{
             opacity: opacitySHS,
             color: skillTitleColor,
@@ -178,6 +219,7 @@ const ParallaxBlock = ({ offset }) => {
         />
       </MParallaxTitleBlock>
       <MParallaxCardContainer
+        transition={{ type: 'spring' }}
         style={{
           height: SUheight,
           minHeight: SUminHeight,

@@ -8,10 +8,16 @@ const MParralaxSkillCard = forwardRef((props, ref) => {
       ref={ref}
       className={`flex flex-col items-center mt-[30rem] text-[#fff]`}
     >
-      <div className='mb-[3rem]'>
-        <img src={image} alt='svg icon' />
+      <div className='3xl:mb-[3rem] 2xl:mb-[3rem] xl:mb-[2rem]'>
+        <img
+          className='xl:max-w-[40px] lg:max-w-[34px]'
+          src={image}
+          alt='svg icon'
+        />
       </div>
-      <div className='text-[2.2rem] text-center'>{text}</div>
+      <div className='text-center 3xl:text-[2.2rem] 2xl:text-[2.2rem] xl:text-[1.6rem] lg:text-[1.2rem]'>
+        {text}
+      </div>
     </div>
   )
 })

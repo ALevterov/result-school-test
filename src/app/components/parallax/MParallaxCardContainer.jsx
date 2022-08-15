@@ -5,7 +5,7 @@ const MParallaxCardContainer = forwardRef((props, ref) => {
   const { children } = props
   return (
     <div
-      className='grid grid-cols-3 gap-x-[3rem] max-w-[128rem] min-h-[25rem] overflow-hidden'
+      className='grid grid-cols-3  min-h-[25rem] overflow-hidden 3xl:gap-x-[3rem] 3xl:max-w-[128rem] 2xl:gap-x-[3rem] 2xl:max-w-[128rem] xl:gap-x-[2rem] xl:max-w-[104rem] lg:gap-x-[1rem] lg:max-w-[80rem]'
       ref={ref}
     >
       {children}

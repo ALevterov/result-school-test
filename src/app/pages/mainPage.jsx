@@ -150,7 +150,7 @@ const MainPage = () => {
         </div>
       </section>
       <section
-        className='section__parallax h-[3000px] bg-black m-[3rem] rounded-[2rem]'
+        className='section__parallax h-[3500px] bg-black m-[3rem] rounded-[2rem]'
         ref={parallaxRef}
       >
         {parRef && <ParallaxBlock offset={parallaxRef.current.offsetTop} />}
